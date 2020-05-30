@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">      
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Survey Makanan Temabalang</title>
+  <style>
+  body {
+  background-color: #ffffff; 
+}
+a:hover { 
+  color: red
+}
+h1,h2,h3 {
+  text-align: center;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  color: black;
+}
+h1.title {
+  display: table;
+  margin: auto;
+  background-color: #afc4d6;
+  border-width: 4px;
+  border-style: outset;
+  border-color: #9fd1ff;
+  padding: 5px 8px;
+  letter-spacing: -.025em;
+} 
+.formTable {
+  display: table;
+}
+/* If prompt and input are in two cells of one row, the prompt will be R-aligned. */
+.formTable td:first-child {
+  text-align: right;
+}
+/* Third table cell shows the error message, so make it bold and red. Used in validation examples that have h:message. */
+.formTable td:nth-child(3) {
+  color: red;
+  font-weight: bold;
+}
+th { background-color: #afc4d6;
+     font-size: 110%;
+     font-family: Arial, Helvetica, sans-serif;
+}
+legend {
+  font-weight: bold;
+  color: black;
+  background-color: #afc4d6;
+  border: 1px solid #1a55bf;
+  padding: 3px 5px;
+  border-radius: 3px;
+}
+fieldset {
+  border-radius: 6px;
+  display: block;
+}
+input, textarea {
+  background-color: #ecedf2;
+  text-align: left;
+}
+input[type="checkbox"] {
+  background-color: transparent;  /* For IE 7-9 -- doesn't matter in FF, Chrome, or IE 10+ */
+}
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus {
+  background-color: #9fd1ff;
+}
+input[type="text"]{
+  width:500px;
+}
+.error {
+  color: red;
+  font-weight: bold;
+}
+/* So that in Chrome and IE, the bullets are next to the text in centered lists. Already OK in Firefox. */
+[align="center"] li {
+  list-style-position: inside;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  align-items: center;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+
+</style>
+</head>
+
+<body>
+<br/>
+<div align="center">
+  <form method="post" action="QuerySurvey" method="get">
+        <h1 class="ui-widget-header ui-corner-all">Survey Makanan Tembalang</h1><br/>
+		TUGAS JPA SURVEY<br/><br/>
+		
+        <table style="border:1px">
+
+       <tr>
+        <td>Nama :</td>
+        <td>
+          <input type="text" label="NamaBelakang" 
+                       id="Nama" name="nama"
+                       required="true"/>
+                      <h:message for="NamaBelakang" style="color: red"/>
+        </td>
+      </tr>
+      
+      <tr>
+        <td>Email:</td>
+        <td>
+          <input type="text" label="Email Address"
+                       id="email" name="email" required="true"
+                       />
+          <h:message for="email" style="color: red"/>
+        </td>
+      </tr>
+      
+      <tr>
+        <td>Alamat Jalan:</td>
+        <td>
+          <input type="text" label="Address"
+                       id="address" name="alamat"
+                       required="true"/>
+          <h:message for="address" style="color: red"/>
+        </td>
+      </tr>
+      
+      <tr>
+        <td>Kota:</td>
+        <td>
+          <input type="text" label="Kota" 
+                       id="Kota" name="kota" 
+                       required="true"/>
+                       <h:message for="Kota" style="color: red"/>
+        </td>
+      </tr>
+      
+        
+      
+      <tr>
+        <td>No Telepon:</td>
+        <td>
+          <input type="text" label="Mobile Number"
+                       id="mobileno" name="no_telp" required="true">
+          </input type="text">
+          <h:message for="mobileno" style="color: red"/>
+        </td>
+      </tr>
+      
+        <tr>
+        <td>Tanggal Survey (mm-dd-yy):</td>
+        <td>
+          <input type="date" label="Date of Birth" placeholder="mm-dd-yy"
+                       id="tglsurvey" name="tgl" required="true">
+            <f:convertDateTime pattern="MM-dd-yy" />
+          </input type="text">
+          <h:message for="tglsurvey" style="color: red"/>
+        </td>
+      </tr>
+     
+      
+      <tr>
+        <td>Bagaimana Makanan di Tembalang:</td>
+        <td>
+          <input type="radio" id="male" name="how" value="teman">
+ 	 <label for="male">tidak enak</label><br>
+ 	 <input type="radio" id="female" name="how" value="televisi">
+ 	 <label for="female">enak</label><br>         
+        </td>
+      </tr>
+
+	<tr>
+        <td>Rekomendasikan Makanan Tembalang?</td>
+        <td>
+          <select name="rekomendasi" id="cars">
+            <option value="sangat">Sangat Mungkin</option>
+            <option value="mungkin">Mungkin</option>
+            <option value="tidak">Tidak Mungkin</option>
+  </select>
+        </td>
+      </tr>
+      
+      
+      <tr>
+        <td>Sebutkan Warung Kesukaan</td>
+   		 <td><textarea style="width:500px" name="komentar" cols="30" rows="10" /></textarea> </td>
+      </tr>
+      
+    </table>
+                <div align="center">
+    <input type="submit" value="Submit"  style="width: 80px" />
+    </div>
+  </form>
+  <br/>
+  
+  </div>
+</body>
+</html>
